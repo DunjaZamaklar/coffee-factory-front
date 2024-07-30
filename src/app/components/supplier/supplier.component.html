@@ -1,1 +1,39 @@
-<p>supplier works!</p>
+<mat-toolbar class="toolbarNew" color="primary">
+    <span class="title-center">Supplier</span>
+</mat-toolbar>
+<div class="container mat-elevation-z8">
+    <mat-table #table matSort [dataSource]="dataSource" class="mat-cell" matSort>
+        <ng-container matColumnDef="Id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{ row.Id }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.Name }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Address">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Address</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.Address }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="City">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>City</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.City }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Country">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Country</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.Country }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="PhoneNumber">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>PhoneNumber</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.PhoneNumber }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Email">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.Email }}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row style="cursor: default" *matRowDef="let row; columns: displayedColumns">
+        </mat-row>
+    </mat-table>
+</div>
